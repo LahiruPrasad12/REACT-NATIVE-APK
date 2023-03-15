@@ -5,7 +5,7 @@ import { useNavigation } from "@react-navigation/native";
 
 const Detail = ({ route }) => {
   const todoRef = firebase.firestore().collection("todos");
-  const [textHeading, onChangeHeadingText] = useState(route.params.item.name);
+  const [textHeading, onChangeHeadingText] = useState(route.params.item.heading);
   const navigation = useNavigation();
 
   const updateTodo = () => {
@@ -71,6 +71,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 32,
     borderRadius: 4,
     elevation: 10,
-    backgroundColor: "#0de065",
+    backgroundColor: "#aaaaaa",
   },
 });
