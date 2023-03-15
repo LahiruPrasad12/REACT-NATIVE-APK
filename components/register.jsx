@@ -49,36 +49,35 @@ const Register = () => {
   return (
     <View style={styles.container}>
       <Text style={{ fontWeight: "bold", fontSize: 23 }}>
-        Register Here..!!
+        Create a new account
       </Text>
       <View style={{ marginTop: 40 }}>
-        <TextInput
-          style={styles.textInput}
-          placeholder="First Name"
-          onChangeText={(firstname) => setFirstname(firstname)}
-          autoCorrect={false}
-        />
-        <TextInput
-          style={styles.textInput}
-          placeholder="Last Name"
-          onChangeText={(lastname) => setLastname(lastname)}
-          autoCorrect={false}
-        />
-        <TextInput
-          style={styles.textInput}
-          placeholder="Email"
-          onChangeText={(email) => setEmail(email)}
-          autoCapitalize="none"
-          autoCorrect={false}
-        />
-        <TextInput
-          style={styles.textInput}
-          placeholder="Password"
-          onChangeText={(password) => setPassword(password)}
-          autoCapitalize="none"
-          autoCorrect={false}
-          secureTextEntry={true}
-        />
+        <View style={styles.formContainer}>
+          <TextInput
+            style={styles.input}
+            placeholder="Email"
+            placeholderTextColor="#aaaaaa"
+            onChangeText={(email) => setEmail(email)}
+            autoCapitalize="none"
+            underlineColorAndroid="transparent"
+            autoCorrect={false}
+          />
+
+        </View>
+
+        <View style={styles.formContainer}>
+          <TextInput
+            style={styles.input}
+            placeholderTextColor="#aaaaaa"
+            underlineColorAndroid="transparent"
+            autoCorrect={false}
+            placeholder="Password"
+            onChangeText={(password) => setPassword(password)}
+            autoCapitalize="none"
+            secureTextEntry={true}
+          />
+
+        </View>
       </View>
       <TouchableOpacity
         onPress={() => registerUser(email, password, firstname, lastname)}
@@ -98,23 +97,31 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 100,
   },
-  textInput: {
-    paddingTop: 20,
-    paddingBottom: 10,
-    width: 400,
-    fontSize: 20,
-    borderBottomWidth: 1,
-    borderBottomColor: "#000",
-    marginBottom: 10,
-    textAlign: "center",
-  },
+
   button: {
-    marginTop: 50,
-    height: 70,
+    marginTop: 30,
+    height: 50,
     width: 250,
-    backgroundColor: "#026efd",
+    backgroundColor: "#aaaaaa",
     alignItems: "center",
     justifyContent: "center",
     borderRadius: 50,
+    marginBottom: 20
+  },
+  formContainer: {
+    flexDirection: "row",
+    width: "80%",
+    height: 80,
+    marginLeft: 10,
+    marginRight: 10,
+  },
+  input: {
+    height: 48,
+    borderRadius: 5,
+    overflow: "hidden",
+    backgroundColor: "white",
+    paddingLeft: 16,
+    flex: 1,
+    marginRight: 5,
   },
 });
