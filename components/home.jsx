@@ -84,7 +84,7 @@ const Home = () => {
     <SafeAreaView style={styles.container}>
       <View style={{ flex: 1 }}>
         <View
-          style={{ margin: 10, alignItems: "center", justifyContent: "center" }}
+          style={{ margin: -15, alignItems: "center", justifyContent: "center" }}
         >
           <Text style={{ fontSize: 20, fontWeight: "bold" }}>
             Hello , {name.firstname}
